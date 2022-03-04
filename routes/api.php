@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HabitacionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HotelController;
@@ -19,5 +20,13 @@ use App\Http\Controllers\HotelController;
 //Rutas de hotel, con sus metodos http
 Route::get('/hoteles', [HotelController::class,'index']);
 Route::post('/hotele', [HotelController::class,'store']);
-Route::put('/hoteles/{id}', [HotelController::class,'update']);
-Route::delete('/hoteles/{id}', [HotelController::class,'destroy']);
+Route::put('/hotel/{id}', [HotelController::class,'update']);
+Route::delete('/hotel/{id}', [HotelController::class,'destroy']);
+
+//local http://127.0.0.1:8000/api/habitaciones
+
+//Rutas de habitaciones, con sus metodos http
+Route::get('/habitaciones', [HabitacionController::class,'index']);
+Route::post('/habitacion', [HabitacionController::class,'store']);
+Route::put('/habitacion/{id}', [HabitacionController::class,'update']);
+Route::delete('/habitacion/{id}', [HabitacionController::class,'destroy']);
