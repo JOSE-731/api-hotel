@@ -15,13 +15,13 @@ use App\Http\Controllers\HotelController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-//local http://127.0.0.1:8000/api/hoteles
+//local http://127.0.0.1:8000/api/hoteles/
 
 //Rutas de hotel, con sus metodos http
-Route::get('/hoteles', [HotelController::class,'index']);
+Route::get('/hoteles/', [HotelController::class,'index']);
 Route::post('/hotele', [HotelController::class,'store']);
 Route::put('/hotel/{id}', [HotelController::class,'update']);
-Route::delete('/hotel/{id}', [HotelController::class,'destroy']);
+Route::delete('/hoteles/{id}', [HotelController::class,'destroy']);
 
 //local http://127.0.0.1:8000/api/habitaciones
 
