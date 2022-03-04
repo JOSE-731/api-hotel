@@ -44,6 +44,8 @@ class HotelController extends Controller
         //Guardamos los datos
         $hotel->save();
 
+      
+
     }
 
     /**
@@ -77,19 +79,7 @@ class HotelController extends Controller
      */
     public function update(Request $request)
     {
-        //Obtenemos el id del dato que se va actualizar
-        $hotel_edit = Hotel::findOrFail($request->id);
-
-        $hotel_edit = new Hotel();
-        $hotel_edit->nombre = $request->nombre;
-        $hotel_edit->ciudad = $request->ciudad;
-        $hotel_edit->direccion = $request->direccion;
-        $hotel_edit->nit = $request->nit;
-        $hotel_edit->numero_habitaciones = $request->numero_habitaciones;
-
-        $hotel_edit->save();
-
-        return $hotel_edit;
+       
     }
 
     /**
@@ -103,6 +93,6 @@ class HotelController extends Controller
         $data = Hotel::find($id);
         $data->delete();
 
-       return back();
+       return $data;
     }
 }
