@@ -56,7 +56,8 @@ class HotelController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Hotel::find($id);
+        return $data;
     }
 
     /**

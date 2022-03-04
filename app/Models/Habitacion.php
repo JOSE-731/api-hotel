@@ -10,9 +10,9 @@ class Habitacion extends Model
     use HasFactory;
 
     //Nombre de la tabla
-    protected $table = "hotels";
+    protected $table = "habitacions";
 
     //Nombre de los campos
-    protected $fillable = ['nombre', 'ciudad', 'direccion', 'nit', 'numero_habitantes'];
+    protected $fillable = ['cantidad', 'tipo_habitacion', 'acomodacion', 'id_hotel'];
     public $timestamps = false;
 }

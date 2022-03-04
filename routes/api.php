@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DatosApoyoController;
 use App\Http\Controllers\HabitacionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,10 @@ Route::post('/hoteles/', [HotelController::class,'store']);
     }
  */
 
+//local http://127.0.0.1:8000/api/hoteles/2
+Route::get('/hoteles/detalles/{id}', [HotelController::class,'show']);
+
+
 Route::delete('/hoteles/{id}', [HotelController::class,'destroy']);
 
 //local http://127.0.0.1:8000/api/habitaciones
@@ -40,3 +45,6 @@ Route::get('/habitaciones', [HabitacionController::class,'index']);
 Route::post('/habitacion', [HabitacionController::class,'store']);
 Route::put('/habitacion/{id}', [HabitacionController::class,'update']);
 Route::delete('/habitacion/{id}', [HabitacionController::class,'destroy']);
+
+//Api data apoyo
+Route::get('/data', [DatosApoyoController::class,'index']);
