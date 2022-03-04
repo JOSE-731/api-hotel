@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HotelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//local http://127.0.0.1:8000/api/hoteles
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Rutas de hotel, con sus metodos http
+Route::get('/hoteles', [HotelController::class,'index']);
+Route::post('/hotele', [HotelController::class,'store']);
+Route::put('/hoteles/{id}', [HotelController::class,'update']);
+Route::delete('/hoteles/{id}', [HotelController::class,'destroy']);
