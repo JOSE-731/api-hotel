@@ -42,7 +42,7 @@ Route::delete('/hoteles/{id}', [HotelController::class,'destroy']);
 
 //Rutas de habitaciones, con sus metodos http
 Route::get('/habitaciones/', [HabitacionController::class,'index']);
-Route::post('/habitacion', [HabitacionController::class,'store']);
+Route::post('/habitaciones/', [HabitacionController::class,'store']);
 Route::put('/habitacion/{id}', [HabitacionController::class,'update']);
 Route::delete('/habitaciones/{id}', [HabitacionController::class,'destroy']);
 
